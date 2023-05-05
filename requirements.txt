@@ -1,6 +1,6 @@
-transformers
-torch
-soundfile
-redis
-rq
-flask
+transformers==4.27.4
+torch==2.0.0
+soundfile==0.12.1
+redis==4.5.4
+rq==1.13.0
+flask==2.2.3
