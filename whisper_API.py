@@ -15,10 +15,14 @@ def whisper_predict():
     file = request.data
     # read wav file to array
     sound_arr, sampling_rate = sf.read(io.BytesIO(file))
+    try:
+        sound_arr = sound_arr[:, 0]
+    except:
+        pass
     input_features = processor(sound_arr, sampling_rate=sampling_rate, return_tensors="pt").input_features
 
     # generate token ids from model
-    predicted_ids = model.generate(input_features, forced_decoder_ids=forced_decoder_ids)
+    predicted_ids = model.generate(input_features, forced_decoder_ids=forced_decoder_ids, max_new_tokens=2000)
 
     # decode token ids to text
     transcription = processor.batch_decode(predicted_ids, skip_special_tokens=True)
