@@ -18,6 +18,14 @@ and to download the wav2vec2-base-vietnamese-250h model file run the following c
 
 `wget -P ./Wav2Vec2_VI_model https://huggingface.co/nguyenvulebinh/wav2vec2-base-vietnamese-250h/resolve/main/pytorch_model.bin`
 
+if you using window os use the following command to download the whisper-base model
+
+`Invoke-WebRequest -Uri https://huggingface.co/VtAIP/whisper-base/resolve/main/pytorch_model.bin -OutFile ./Whisper_base_model/pytorch_model.bin`
+
+and to download the wav2vec2-base-vietnamese-250h model file run the following command
+
+`Invoke-WebRequest -Uri https://huggingface.co/nguyenvulebinh/wav2vec2-base-vietnamese-250h/resolve/main/pytorch_model.bin -OutFile ./Wav2Vec2_VI_model/pytorch_model.bin`
+
 For running the redis queue you will also need to install redis server, on Linux the following command will install redis server
 
 `sudo apt-get install redis`
